@@ -1,0 +1,56 @@
+{
+  "name": "@monoai/error-tracker-node",
+  "version": "0.1.0",
+  "description": "Node.js SDK for Error Tracker - automatic error capturing for server applications",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./auto": {
+      "import": "./dist/esm/auto.js",
+      "require": "./dist/cjs/auto.js",
+      "types": "./dist/types/auto.d.ts"
+    },
+    "./express": {
+      "import": "./dist/esm/frameworks/express.js",
+      "require": "./dist/cjs/frameworks/express.js",
+      "types": "./dist/types/frameworks/express.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c && tsc --emitDeclarationOnly --outDir dist/types",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@monoai/error-tracker-core": "^0.1.0"
+  },
+  "peerDependencies": {
+    "express": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "express": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": [
+    "./dist/esm/auto.js",
+    "./dist/cjs/auto.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monoAItechnology/custom-error-tracker-sdk-js.git",
+    "directory": "packages/node"
+  },
+  "license": "MIT"
+}

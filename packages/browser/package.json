@@ -1,0 +1,43 @@
+{
+  "name": "@monoai/error-tracker-browser",
+  "version": "0.1.0",
+  "description": "Browser SDK for Error Tracker - automatic error capturing",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "browser": "./dist/esm/index.js",
+  "unpkg": "./dist/browser/error-tracker.min.js",
+  "jsdelivr": "./dist/browser/error-tracker.min.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./auto": {
+      "import": "./dist/esm/auto.js",
+      "require": "./dist/cjs/auto.js",
+      "types": "./dist/types/auto.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c && tsc --emitDeclarationOnly --outDir dist/types",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@monoai/error-tracker-core": "^0.1.0"
+  },
+  "sideEffects": [
+    "./dist/esm/auto.js",
+    "./dist/cjs/auto.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monoAItechnology/custom-error-tracker-sdk-js.git",
+    "directory": "packages/browser"
+  },
+  "license": "MIT"
+}
