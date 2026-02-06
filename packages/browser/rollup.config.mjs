@@ -34,6 +34,7 @@ export default [
       typescript({
         tsconfig: './tsconfig.json',
         declaration: false,
+        declarationMap: false,
         outDir: 'dist/esm',
       }),
     ],
@@ -63,6 +64,7 @@ export default [
       typescript({
         tsconfig: './tsconfig.json',
         declaration: false,
+        declarationMap: false,
         outDir: 'dist/cjs',
       }),
     ],
@@ -91,6 +93,7 @@ export default [
       typescript({
         tsconfig: './tsconfig.json',
         declaration: false,
+        declarationMap: false,
       }),
     ],
   },
